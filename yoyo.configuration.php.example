@@ -1,0 +1,7 @@
+<?php
+
+$configuration = array(
+    "migration_path" => "/home/check/projects/yoyo/migrations",
+);
+
+?>

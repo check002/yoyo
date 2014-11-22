@@ -1,0 +1,5 @@
+migrations/
+composer.lock
+composer.phar
+phpunit.xml
+yoyo.configuration.php

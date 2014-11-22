@@ -1,0 +1,21 @@
+{
+    "name": "check002/yoyo",
+    "type": "library",
+    "description": "General purpose migrations for php.",
+    "keywords": ["migration", "versioning"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Kieschnick",
+            "email": "logge002@yweb.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}

@@ -201,6 +201,19 @@ class Migrator
         return $exception;
     }
 
+    private function printException(Exception $e)
+    {
+        do 
+        {
+            echo $e->getMessage().PHP_EOL;
+            $formatter = new BufferFormatter("  ");
+            $formatter->start();
+            echo $e->getTraceAsString();
+            $formatter->stop();
+        }
+        while ( ($e = $e->getPrevious()) != null );
+    }
+
     public function up()
     {
         $this->initialize();
@@ -223,8 +236,7 @@ class Migrator
 
             if( ! is_null( $exception ) )
             {
-                echo "An Error during the executing occurred".PHP_EOL;
-                echo "\t".$exception->getMessage().PHP_EOL;
+                $this->printException( $exception ).PHP_EOL;
             }
             else
             {
@@ -287,8 +299,7 @@ class Migrator
 
             if( ! is_null( $exception ) )
             {
-                echo "An Error during the executing occurred".PHP_EOL;
-                echo "\t".$exception->getMessage().PHP_EOL;
+                $this->printException( $exception).PHP_EOL;
             }
             else
             {
@@ -468,7 +479,7 @@ class Migrator
 
     public function help()
     {
-        echo "\nyoyo (c) 2014 check002, http://github.com/check002".PHP_EOL.PHP_EOL;
+        echo "\nyoyo (c) 2014 check002, http://github.com/check002/yoyo.git".PHP_EOL.PHP_EOL;
         echo "\thelp        show this help and exit".PHP_EOL;
         echo "\tshow        shows the last applied migration".PHP_EOL;
         echo "\tlog         show all applied migrations".PHP_EOL;
@@ -478,7 +489,7 @@ class Migrator
         echo "\traise       applies all unapplied migrations".PHP_EOL;
         echo "\tdown        reverts the last migration".PHP_EOL;
         echo "\tcheck       show the summary of the last and the next migration".PHP_EOL;
-        echo "\tgenerate    creates a skeleton for a new migration".PHP_EOL;
+        echo "\tgenerate    creates a skeleton for a new migration from the given name".PHP_EOL;
 
     }
 }

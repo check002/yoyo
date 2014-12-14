@@ -90,4 +90,6 @@ class ExampleMigration extends Migration
 }
 ```
 
-Note that yoyo is only tested in the environment I needed it and there are currently no tests.
+Note that yoyo is only tested in the environment I needed it and there are currently only basic tests.
+
+[![Build Status](https://travis-ci.org/check002/yoyo.svg?branch=master)](https://travis-ci.org/check002/yoyo)

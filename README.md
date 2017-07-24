@@ -8,7 +8,7 @@ yoyo can be used as standalone application or embedded into an existing applicat
 ```php
 $configuration = array(
     "migration_path" => "/path_to_directory/where/migrations_are_placed",
-    "log_file_name" => "migration.log.php"
+    "log_file" => "/path_to_migration_file.log.php"
 );
 ```
 
@@ -31,7 +31,7 @@ To use yoyo as part of your application, you need to create a *Migrator* object 
 ```php
 $migrator = new Migrator(array(
         "migration_path" => "/path_to_migration/where/migrations_are_placed",
-        "log_file_name" => "migration.log.php"
+        "log_file" => "/path_to_migration_file.log.php"
     ));
 $migrator->generate("migrationname");
 ```

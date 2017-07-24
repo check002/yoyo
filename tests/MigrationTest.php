@@ -12,7 +12,7 @@ class MigrationTest extends \PHPUnit_Framework_TestCase
     {
         $this->migrator = new Migrator(array(
             "migration_path" => $this->directory,
-            "log_file_name" => $this->logfile
+            "log_file" => $this->directory."/".$this->logfile
         ));
     }
 

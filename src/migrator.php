@@ -57,7 +57,7 @@ class Migrator
 
     private function logFilePath()
     {
-        if( ! isset( 'log_file', $this->configuration ) ){
+        if( ! isset( $this->configuration['log_file'] ) ){
             return $this->targetPath('migration.log.php');
         }
         return $this->configuration['log_file'];    }
